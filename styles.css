@@ -1,0 +1,133 @@
+
+nav ul li a {
+    color: white;                /* Color del texto */
+    text-decoration: none;       /* Sin subrayado por defecto */
+    position: relative;          /* Necesario para posicionar el subrayado */
+    display: inline-block;       /* Necesario para el ancho dinámico */
+}
+
+nav ul li a::after {
+    content: '';                 /* Pseudo-elemento vacío */
+    position: absolute;          /* Subrayado absoluto respecto al enlace */
+    width: 0;                    /* Comienza invisible */
+    height: 2px;                 /* Grosor del subrayado */
+    left: 0;                     /* Desde la izquierda */
+    bottom: -3px;                /* Espacio debajo del texto */
+    background-color: white;     /* Color del subrayado */
+    transition: width 0.3s ease; /* Animación suave */
+}
+
+nav ul li a:hover::after {
+    width: 100%;                 /* Al pasar el mouse, se expande */
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.carousel-img {
+  display: none;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.carousel-img.active {
+  display: block;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 50%;
+  user-select: none;
+  font-size: 20px;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+ .lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.close {
+  position: absolute;
+  top: 20px; right: 30px;
+  font-size: 3rem;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .foto-perfil {
+    display: none;
+  }
+}
+
+.logo img {
+    width: 140px;
+    height: auto; /* Cambiar esto para que mantenga proporción */
+    padding: 5px;
+}
+
+.logo h1 {
+    font-size: 28px;
+    margin: 0;
+}
+
+.logo h1 span {
+    font-size: 20px;
+}
+@media (max-width: 768px) {
+    .logo img {
+        width: 100px; /* Achicamos el logo */
+    }
+
+    .logo h1 {
+        font-size: 20px; /* Achicamos el título */
+        text-align: center;
+    }
+
+    .logo h1 span {
+        font-size: 14px; /* Achicamos el subtítulo */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        width: 80px; /* Más chico aún en pantallas muy pequeñas */
+    }
+
+    .logo h1 {
+        font-size: 16px;
+    }
+
+    .logo h1 span {
+        font-size: 12px;
+    }
+}

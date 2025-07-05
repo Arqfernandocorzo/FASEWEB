@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fase Construcciones</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link rel="stylesheet" href=styles.css>
+        
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background-color: #1a1a1a;
+            color: white;
+            display: flex;
+            padding-right: 40px;
+            justify-content: space-between;
+            align-items: center;
+            /* position: sticky; */
+            top: 0;
+            z-index: 999;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 140px;
+            height: 98px;
+            padding: 5px;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.25rem;;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+              position: relative;
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+
+        
+        /* Banner fijo */
+        .banner {
+            width: 100%;
+            max-height: 400px;
+            z-index: -1; /* Asegura que el banner esté detrás del contenido */
+        }
+
+        .banner img {
+            width: 100%;
+            display: block;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            border-radius:30%;
+            padding: 10px;
+            font-size: 30px;
+            z-index: 100;
+            text-decoration: none;
+        }
+
+        /* Scroll Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            background-color: #333;
+            color: white;
+            border-radius: 30%;
+            padding: 15px;
+            font-size: 20px;
+            z-index: 100;
+            text-decoration: none;
+          
+        }
+
+        /* Redes sociales */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .social-icons a {
+            color: #333;
+            font-size: 24px;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        /* Proyectos grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .project-card {
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .project-card img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        /* Servicios grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .service-card {
+            background-color: #afc8d3;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        /* Formulario */
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 500px;
+            margin: auto;
+        }
+
+        form input, form textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        form button {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background-color: #333;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 200px;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body id="top">
+    <header>
+        <div class="logo">
+            <img src="assets/logo.png" alt="Logo">
+            <h1>FASE CONSTRUCCIONES<br><span style="font-size: 20px; font-family: Helvetica, sans-serif;">OBRAS Y PROYECTOS</span></h1>
+        </div>
+        <i class="fas fa-bars menu-icon" id="menu-toggle"></i>
+        <nav>
+            <ul id="menu">
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto y CV</a></li>
+                <!-- <li><a href="#cv">Curriculum Vitae</a></li> -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner -->
+    <div class="banner" style="margin-bottom: 50px;">
+        <img src="assets/banner.png" alt="Banner principal">
+    </div>
+
+    <main style="padding: 2px;">
+       <section id="nosotros" style="max-width: 1200px; margin: auto; padding: 20px 10px; 
+       display: flex; align-items: center; justify-content: center; gap: 15px;">
+  <!-- Texto con padding 15%, alineado y justificado -->
+  <div style="flex: 1; text-align: justify; padding: 0 0%;">
+    <h2>Sobre Nosotros</h2>
+    <p style="font-size: 18px; line-height: 1.6;">
+      En Fase Construcciones ofrecemos soluciones integrales en arquitectura, diseño y ejecución de obras. Somos un equipo liderado por el arquitecto Fernando Corzo, quien cuenta con más de 10 años de experiencia en proyectos personalizados, eficientes y detallistas.
+      <br><br>
+Nuestro compromiso es acompañarte en todas las fases del proceso de construir: desde la primera idea, pasando por el diseño y la documentación técnica, hasta la ejecución final de la obra.
+Cada fase es importante. Cada decisión cuenta. Por eso trabajamos con profesionalismo, empatía y una fuerte vocación de servicio.
+    </p>
+  </div>
+
+  <!-- Foto de perfil con efecto hover en CSS -->
+  <div style="flex-shrink: 0;">
+    <img src="assets/Fotoperfil.png" alt="Foto de perfil Fernando Corzo" class="foto-perfil" />
+  </div>
+</section>
+
+<style>
+  .foto-perfil {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #333;
+    transition: transform 1.5s ease, opacity 0.3s ease;
+  }
+
+  .foto-perfil:hover {
+    transform: scale(1.2) translateX(15px);
+    
+  }
+</style>
+<section id="servicios" style="max-width: 1200px; margin: auto; padding: 20px 10px;">
+    <h2>Servicios</h2>
+    <div class="services-grid">
+        <div class="service-card">
+            <i class="fas fa-drafting-compass fa-2x"></i>
+            <h3>Proyectos y Construcción</h3>
+            <ul>
+                <li style="text-align: left;">Diseño Arquitectónico</li>
+                <li style="text-align: left;">Construcción Llave en Mano</li>
+                <li style="text-align: left;">Ampliaciones y Remodelaciones</li>
+                <li style="text-align: left;">Diseño de Espacios Comerciales</li>
+            </ul>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-tools fa-2x"></i>
+            <h3>Gestión y Asesoramiento Técnico</h3>
+            <ul>
+                <li style="text-align: left;">Dirección de Obra</li>
+                <li style="text-align: left;">Asesoramiento Técnico</li>
+                <li style="text-align: left;">Gestión de Permisos y Habilitaciones</li>
+                <li style="text-align: left;">Regularización de Planos</li>
+            </ul>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-cube fa-2x"></i>
+            <h3>Visualización y Diseño Personalizado</h3>
+            <ul>
+                <li style="text-align: left;">Modelado 3D y Renders Profesionales</li>
+                <li style="text-align: left;">Consultoría de Diseño Interior</li>
+                <li style="text-align: left;">Diseño de Mobiliario a Medida</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+     <style>
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  @media (max-width: 900px) {
+    .projects-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 600px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<section id="proyectos" style="max-width: 1200px; margin: auto; padding: 20px 10px;">
+  <h2>Proyectos Destacados</h2>
+  <p>Te mostramos algunas de nuestras obras, con imágenes del proceso y detalles de cada proyecto.</p>
+
+  <div class="projects-grid"> 
+    <div class="project-card">
+      <div class="carousel" style=" position: relative; max-width: 100%;">
+        <img src="assets/Proyecto 1/6.png" alt="Casa Romina Fernandez" class="carousel-img active">
+        <img src="assets/Proyecto 1/1.png" alt="Casa Romina Fernandez vista 2" class="carousel-img">
+        <img src="assets/Proyecto 1/2.png" alt="Casa Romina Fernandez vista 3" class="carousel-img">
+        <img src="assets/Proyecto 1/3.png" alt="Casa Romina Fernandez vista 4" class="carousel-img">
+        <img src="assets/Proyecto 1/4.png" alt="Casa Romina Fernandez vista 5" class="carousel-img">
+        <img src="assets/Proyecto 1/5.png" alt="Casa Romina Fernandez vista 6" class="carousel-img">
+        <img src="assets/Proyecto 1/7.png" alt="Casa Romina Fernandez vista 8" class="carousel-img">
+        <img src="assets/Proyecto 1/8.png" alt="Casa Romina Fernandez vista 9" class="carousel-img">
+        <img src="assets/Proyecto 1/9.png" alt="Casa Romina Fernandez vista 10" class="carousel-img">
+             <button class="carousel-btn prev">&#10094;</button>
+             <button class="carousel-btn next">&#10095;</button>
+      </div>
+      <h3>Casa R|F</h3>
+      <p>Vivienda familiar en zona residencial con diseño moderno Ciudad de La Rioja - Altos del Palmar.</p>
+    </div>
+
+    <div class="project-card">
+      <div class="carousel" style=" position: relative; max-width: 100%;">
+        <img src="assets/Proyecto 2/1.jpg" alt="Casa MLA" class="carousel-img active">
+        <img src="assets/Proyecto 2/2.jpg" alt="Casa MLA vista 2" class="carousel-img">
+        <img src="assets/Proyecto 2/3.jpg" alt="Casa MLA vista 3" class="carousel-img">
+        <img src="assets/Proyecto 2/4.jpg" alt="Casa MLA vista 4" class="carousel-img">
+        <img src="assets/Proyecto 2/5.jpg" alt="Casa MLA vista 5" class="carousel-img">
+        <img src="assets/Proyecto 2/6.png" alt="Casa MLA vista 6" class="carousel-img">
+        <img src="assets/Proyecto 2/7.png" alt="Casa MLA vista 8" class="carousel-img">
+
+                <button class="carousel-btn prev">&#10094;</button>
+                <button class="carousel-btn next">&#10095;</button>
+      </div>
+      <h3>Casa MLA</h3>
+      <p>Anteproyecto - Vivienda familiar en zona SUR - Ciudad de La Rioja .</p>
+    </div>
+
+    <!-- <div class="project-card">
+      <img src="https://via.placeholder.com/300x200?text=Proyecto+2" alt="Proyecto 2">
+      <h3>Proyecto 2</h3>
+      <p>Ampliación y remodelación de vivienda existente.</p>
+    </div> -->
+
+    <div class="project-card">
+      <div class="carousel" style=" position: relative; max-width: 100%;">
+        <img src="assets/Proyecto 3/1-complejoLasPiedras.jpg" alt="Casa Romina Fernandez" class="carousel-img active">
+        <img src="assets/Proyecto 3/4.jpg" alt="Casa Romina Fernandez vista 2" class="carousel-img">
+        <img src="assets/Proyecto 3/5.jpg" alt="Casa Romina Fernandez vista 3" class="carousel-img">
+        <img src="assets/Proyecto 3/2.jpg" alt="Casa Romina Fernandez vista 4" class="carousel-img">
+        <img src="assets/Proyecto 3/3.jpg" alt="Casa Romina Fernandez vista 5" class="carousel-img">
+
+                <button class="carousel-btn prev">&#10094;</button>
+                <button class="carousel-btn next">&#10095;</button>
+      </div>
+      <h3>Complejo Las Lajas</h3>
+      <p>Complejo de Departamentos y locales comerciales - Olta</p>
+    </div>
+
+    <div class="project-card">
+      <div class="carousel" style=" position: relative; max-width: 100%;">
+        <img src="assets/Proyecto 4/Totem Los molinos.jpg" alt="Casa Romina Fernandez" class="carousel-img active">
+             <button class="carousel-btn prev">&#10094;</button>
+             <button class="carousel-btn next">&#10095;</button>
+      </div>
+      <h3>Prototipo Ingreso a Localidades </h3>
+      <p>Diseño de Totem para Ingreso a Los Molinos - La Rioja</p>
+    </div>
+
+    <div class="project-card">
+      <div class="carousel" style=" position: relative; max-width: 100%;">
+        <img src="assets/Proyecto 5/1.jpg" alt="Casa Romina Fernandez" class="carousel-img active">
+        <img src="assets/Proyecto 5/2.jpg" alt="Casa Romina Fernandez vista 2" class="carousel-img">
+        <img src="assets/Proyecto 5/3.jpg" alt="Casa Romina Fernandez vista 3" class="carousel-img">
+        <img src="assets/Proyecto 5/4.jpg" alt="Casa Romina Fernandez vista 4" class="carousel-img">
+        <img src="assets/Proyecto 5/5.jpg" alt="Casa Romina Fernandez vista 5" class="carousel-img">
+        <img src="assets/Proyecto 5/6.jpg" alt="Casa Romina Fernandez vista 6" class="carousel-img">
+                <button class="carousel-btn prev">&#10094;</button>
+                <button class="carousel-btn next">&#10095;</button>
+      </div>
+      <h3>Casa F|B</h3>
+      <p>Vivienda familiar en zona Norte - Ciudad de La Rioja</p>
+    </div>
+
+    <!-- <div class="project-card">
+      <img src="https://via.placeholder.com/300x200?text=Proyecto+2" alt="Proyecto 2">
+      <h3>Proyecto 2</h3>
+      <p>Ampliación y remodelación de vivienda existente.</p>
+    </div> -->
+
+    <div class="project-card">
+      <div class="carousel" style=" position: relative; max-width: 100%;">
+        <img src="assets/Proyecto 6/1.jpg" alt="Casa Romina Fernandez" class="carousel-img active">
+        <img src="assets/Proyecto 6/2.jpg" alt="Casa Romina Fernandez vista 2" class="carousel-img">
+        <img src="assets/Proyecto 6/3.jpg" alt="Casa Romina Fernandez vista 4" class="carousel-img">
+        <img src="assets/Proyecto 6/4.jpg" alt="Casa Romina Fernandez vista 5" class="carousel-img">
+        <img src="assets/Proyecto 6/5.jpg" alt="Casa Romina Fernandez vista 6" class="carousel-img">
+                <button class="carousel-btn prev">&#10094;</button>
+                <button class="carousel-btn next">&#10095;</button>
+      </div>
+      <h3>Casa M|E</h3>
+      <p>Refuncionalizacion de vivienda unifamiliar - Zono Oeste - Ciudad de La Rioja</p>
+    </div>
+<!-- 
+        <div class="project-card">
+      <div class="carousel" style=" position: relative; max-width: 100%;">
+        <img src="assets/Proyecto 1/6.png" alt="Casa Romina Fernandez" class="carousel-img active">
+        <img src="assets/Proyecto 1/1.png" alt="Casa Romina Fernandez vista 2" class="carousel-img">
+        <img src="assets/Proyecto 1/2.png" alt="Casa Romina Fernandez vista 3" class="carousel-img">
+        <img src="assets/Proyecto 1/3.png" alt="Casa Romina Fernandez vista 4" class="carousel-img">
+        <img src="assets/Proyecto 1/4.png" alt="Casa Romina Fernandez vista 5" class="carousel-img">
+        <img src="assets/Proyecto 1/5.png" alt="Casa Romina Fernandez vista 6" class="carousel-img">
+        <img src="assets/Proyecto 1/7.png" alt="Casa Romina Fernandez vista 8" class="carousel-img">
+        <img src="assets/Proyecto 1/8.png" alt="Casa Romina Fernandez vista 9" class="carousel-img">
+        <img src="assets/Proyecto 1/9.png" alt="Casa Romina Fernandez vista 10" class="carousel-img">
+             <button class="carousel-btn prev">&#10094;</button>
+             <button class="carousel-btn next">&#10095;</button>
+      </div>
+      <h3>Casa R|F</h3>
+      <p>Vivienda familiar en zona residencial con diseño moderno.</p>
+    </div>
+
+
+        <div class="project-card">
+      <div class="carousel" style=" position: relative; max-width: 100%;">
+        <img src="assets/Proyecto 1/6.png" alt="Casa Romina Fernandez" class="carousel-img active">
+        <img src="assets/Proyecto 1/1.png" alt="Casa Romina Fernandez vista 2" class="carousel-img">
+        <img src="assets/Proyecto 1/2.png" alt="Casa Romina Fernandez vista 3" class="carousel-img">
+        <img src="assets/Proyecto 1/3.png" alt="Casa Romina Fernandez vista 4" class="carousel-img">
+        <img src="assets/Proyecto 1/4.png" alt="Casa Romina Fernandez vista 5" class="carousel-img">
+        <img src="assets/Proyecto 1/5.png" alt="Casa Romina Fernandez vista 6" class="carousel-img">
+        <img src="assets/Proyecto 1/7.png" alt="Casa Romina Fernandez vista 8" class="carousel-img">
+        <img src="assets/Proyecto 1/8.png" alt="Casa Romina Fernandez vista 9" class="carousel-img">
+        <img src="assets/Proyecto 1/9.png" alt="Casa Romina Fernandez vista 10" class="carousel-img">
+             <button class="carousel-btn prev">&#10094;</button>
+             <button class="carousel-btn next">&#10095;</button>
+      </div>
+      <h3>Casa R|F</h3>
+      <p>Vivienda familiar en zona residencial con diseño moderno.</p>
+    </div>
+
+    <div class="project-card">
+      <div class="carousel" style=" position: relative; max-width: 100%;">
+        <img src="assets/Proyecto 1/6.png" alt="Casa Romina Fernandez" class="carousel-img active">
+        <img src="assets/Proyecto 1/1.png" alt="Casa Romina Fernandez vista 2" class="carousel-img">
+        <img src="assets/Proyecto 1/2.png" alt="Casa Romina Fernandez vista 3" class="carousel-img">
+        <img src="assets/Proyecto 1/3.png" alt="Casa Romina Fernandez vista 4" class="carousel-img">
+        <img src="assets/Proyecto 1/4.png" alt="Casa Romina Fernandez vista 5" class="carousel-img">
+        <img src="assets/Proyecto 1/5.png" alt="Casa Romina Fernandez vista 6" class="carousel-img">
+        <img src="assets/Proyecto 1/7.png" alt="Casa Romina Fernandez vista 8" class="carousel-img">
+        <img src="assets/Proyecto 1/8.png" alt="Casa Romina Fernandez vista 9" class="carousel-img">
+        <img src="assets/Proyecto 1/9.png" alt="Casa Romina Fernandez vista 10" class="carousel-img">
+             <button class="carousel-btn prev">&#10094;</button>
+             <button class="carousel-btn next">&#10095;</button>
+      </div>
+      <h3>Casa R|F</h3>
+      <p>Vivienda familiar en zona residencial con diseño moderno.</p>
+    </div> -->
+
+    </div>
+  </div>
+<section id="contacto" style="margin-top: 40px; max-width:1200px; margin-left: auto; margin-right: auto;">
+  <h2>Contacto y CV</h2>
+
+  <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+
+    <!-- Formulario -->
+    <div style="flex: 1 1 500px; min-width: 300px;">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfAMvfdj4AMnzrtb2IsdsOXMmBtxzKHrLAKC8DJHEGKUImuqg/viewform?usp=header" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
+    </div>
+
+    <!-- CV -->
+    <div style="flex: 1 1 500px; min-width: 300px;">
+      <iframe src="assets/CV_FernandoCorzo.pdf" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
+    </div>
+
+
+
+
+    
+  </div>
+</section>
+
+
+
+
+    </main>
+
+    <!-- Redes Sociales -->
+    <div class="social-icons">
+        <a href="https://www.facebook.com/arq.fernandocorzo" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/fernandocorzo_arquitecto/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/fernando-daniel-corzo-504210125/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.tiktok.com/@fernandocorzo4" target="_blank"><i class="fab fa-tiktok"></i></a>
+    </div>
+
+    <!-- Botón de WhatsApp -->
+    <a href="https://wa.me/5493804762925" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scroll Top Button -->
+    <a href="#top" class="scroll-top" id="scrollTopBtn">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTopBtn.style.display = 'block';
+            } else {
+                scrollTopBtn.style.display = 'none';
+            }
+        });
+    </script>
+    <script>
+document.querySelectorAll('.project-card').forEach(card => {
+  const images = card.querySelectorAll('.carousel img');
+  const prevBtn = card.querySelector('.prev');
+  const nextBtn = card.querySelector('.next');
+  let currentIndex = 0;
+
+  function showImage(index) {
+    images.forEach((img, i) => {
+      img.classList.toggle('active', i === index);
+    });
+  }
+
+  prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+  });
+
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+  });
+
+  // Mostrar la imagen inicial
+  showImage(currentIndex);
+});
+</script>
+
+
+
+</body>
+
+</html>
